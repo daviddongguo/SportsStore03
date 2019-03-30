@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vic.SportsStore.WebApp", "..\Vic.SportsStore.WebApp\Vic.SportsStore.WebApp.csproj", "{76C63262-6351-4BFE-93FE-1DD422557F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vic.SportsStore.Domain", "Vic.SportsStore.Domain\Vic.SportsStore.Domain.csproj", "{0D5440B6-E418-4EB9-98D4-308AD25AD4B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vic.SportsStore.UnitTests", "Vic.SportsStore.UnitTests\Vic.SportsStore.UnitTests.csproj", "{A56B58A3-ED94-47E6-A161-F70C078F112C}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76C63262-6351-4BFE-93FE-1DD422557F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C63262-6351-4BFE-93FE-1DD422557F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C63262-6351-4BFE-93FE-1DD422557F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C63262-6351-4BFE-93FE-1DD422557F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D5440B6-E418-4EB9-98D4-308AD25AD4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D5440B6-E418-4EB9-98D4-308AD25AD4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D5440B6-E418-4EB9-98D4-308AD25AD4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D5440B6-E418-4EB9-98D4-308AD25AD4B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56B58A3-ED94-47E6-A161-F70C078F112C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56B58A3-ED94-47E6-A161-F70C078F112C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56B58A3-ED94-47E6-A161-F70C078F112C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56B58A3-ED94-47E6-A161-F70C078F112C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
