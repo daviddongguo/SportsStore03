@@ -1,7 +1,4 @@
-﻿@using Vic.SportsStore.Domain.Entities
-
-@model Vic.SportsStore.WebApp.Models.ProductsListViewModel
-
+﻿@model Vic.SportsStore.WebApp.Models.ProductsListViewModel
 @{
     ViewBag.Title = "Products";
 }
@@ -15,4 +12,6 @@
     </div>
 }
 
-
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
