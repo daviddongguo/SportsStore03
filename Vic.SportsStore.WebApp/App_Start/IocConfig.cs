@@ -21,6 +21,10 @@ namespace Vic.SportsStore.WebApp
                 .PropertiesAutowired();
 
             builder
+               .RegisterType<EFDbContext>()
+               .PropertiesAutowired();
+
+            builder
                 .RegisterType<EFProductRepository>()
                 .As<IProductsRepository>()
                 .PropertiesAutowired();
