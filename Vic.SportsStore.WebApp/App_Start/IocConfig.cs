@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using Moq;
 using Vic.SportsStore.Domain.Abstract;
+using Vic.SportsStore.Domain.Concrete;
 using Vic.SportsStore.Domain.Entities;
 
 namespace Vic.SportsStore.WebApp
@@ -19,20 +20,9 @@ namespace Vic.SportsStore.WebApp
                 .RegisterControllers(AppDomain.CurrentDomain.GetAssemblies())
                 .PropertiesAutowired();
 
-
-            Mock<IProductsRepository> mock = new Mock<IProductsRepository>();
-
-            mock
-                .Setup(m => m.Products)
-                .Returns(new List<Product>
-                {
-                    new Product { Name = "Football", Price = 25 },
-                    new Product { Name = "Surf board", Price = 179 },
-                    new Product { Name = "Running shoes", Price = 95 }
-                });
-
             builder
-                .RegisterInstance<IProductsRepository>(mock.Object)
+                .RegisterType<EFProductRepository>()
+                .As<IProductsRepository>()
                 .PropertiesAutowired();
 
             var container = builder.Build();
