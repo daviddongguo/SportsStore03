@@ -22,10 +22,10 @@ namespace Vic.SportsStore.DebugConsole
                 {
                     var product = new Product()
                     {
-                        Name = "product1",
-                        Price = 1m,
-                        Description = "aaa",
-                        Category = "bbb"
+                        Name = $"product{i}",
+                        Price = i,
+                        Description = $"Description--{i}",
+                        Category = "Category1"
                     };
 
                     ctx.Products.Add(product);
