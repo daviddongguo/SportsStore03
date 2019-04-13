@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -34,6 +35,11 @@ namespace Vic.SportsStore.Domain.Concrete
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
                     smtpClient.PickupDirectoryLocation = emailSettings.FileLocation;
                     smtpClient.EnableSsl = false;
+
+                    if (!Directory.Exists(emailSettings.FileLocation))
+                    {
+                        Directory.CreateDirectory(emailSettings.FileLocation);
+                    }
                 }
 
                 StringBuilder body = new StringBuilder()
@@ -70,7 +76,7 @@ namespace Vic.SportsStore.Domain.Concrete
 
                 if (emailSettings.WriteAsFile)
                 {
-                    mailMessage.BodyEncoding = Encoding.ASCII;
+                    mailMessage.BodyEncoding = Encoding.UTF8;
                 }
 
                 smtpClient.Send(mailMessage);
