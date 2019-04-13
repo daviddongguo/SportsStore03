@@ -10,13 +10,13 @@ namespace Vic.SportsStore.WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        private IProductsRepository repository;
+        private readonly IProductsRepository _repository;
 
         public const int PageSize = 5;
 
         public ProductController(IProductsRepository productsRepository)
         {
-            this.repository = productsRepository;
+            this._repository = productsRepository;
         }
 
         // GET: Product
@@ -27,7 +27,7 @@ namespace Vic.SportsStore.WebApp.Controllers
 
         public ViewResult List(string category, int page = 1)
         {
-            var categoryProducts = repository
+            var categoryProducts = _repository
                 .Products
                 .Where(p => category == null || p.Category == category);
 
