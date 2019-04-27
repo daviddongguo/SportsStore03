@@ -28,6 +28,8 @@ namespace Vic.SportsStore.WebApp.Concrete
                 return false;
             }
 
+            // var passwordHash = CalcHash(password);
+
             if (loginUser.Password.Equals(password, StringComparison.Ordinal))
             {
                 FormsAuthentication.SetAuthCookie(username, false);
