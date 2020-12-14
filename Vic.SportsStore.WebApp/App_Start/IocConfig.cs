@@ -7,6 +7,8 @@ using Moq;
 using Vic.SportsStore.Domain.Abstract;
 using Vic.SportsStore.Domain.Concrete;
 using Vic.SportsStore.Domain.Entities;
+using Vic.SportsStore.WebApp.Abstract;
+using Vic.SportsStore.WebApp.Concrete;
 
 namespace Vic.SportsStore.WebApp
 {
@@ -27,6 +29,20 @@ namespace Vic.SportsStore.WebApp
             builder
                 .RegisterType<EFProductRepository>()
                 .As<IProductsRepository>()
+                .PropertiesAutowired();
+
+            builder
+                .RegisterType<EmailOrderProcessor>()
+                .As<IOrderProcessor>()
+                .PropertiesAutowired();
+
+            builder
+                .RegisterType<EmailSettings>()
+                .PropertiesAutowired();
+
+            builder
+                .RegisterType<DbAuthProvider>()
+                .As<IAuthProvider>()
                 .PropertiesAutowired();
 
             var container = builder.Build();
